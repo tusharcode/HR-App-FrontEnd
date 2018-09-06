@@ -1,0 +1,213 @@
+<div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+      <!-- <div class="liner"></div> -->
+
+      <!-- circular user icon -->
+        <li >
+            <a>
+                <span class="round-tabs one" [ngStyle]="{'background-color' : formNo == 1 ? '#63c328' : 'white', 'color' : formNo == 1 ? 'white' : '#63c328' }">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+            </a>
+        </li>
+
+      <!-- circular tasks icon -->
+        <li>
+            <a >
+                <span class="round-tabs two" [ngStyle]="{'background-color' : formNo == 2 ? '#febf43' : 'white', 'color' : formNo == 2 ? 'white' : '#febf43' }">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                </span> 
+            </a>
+        </li>
+
+        <!-- circular home icon -->
+        <li>
+            <a >    
+                <span class="round-tabs three" [ngStyle]="{'background-color' : formNo == 3 ? '#3e5e9a' : 'white', 'color' : formNo == 3 ? 'white' : '#3e5e9a' }">
+                    <i class="glyphicon glyphicon-home"></i>
+                </span>
+            </a>
+        </li>
+
+      <!-- circular ok icon -->
+        <li>
+            <a >
+                <span class="round-tabs four" [ngStyle]="{'background-color' : formNo == 4 ? '#f1675e' : 'white', 'color' : formNo == 4 ? 'white' : '#f1675e' }">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Form Wizard Starts -->
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!-- Fisrt Form -->
+        <div class="card" *ngIf= "first" >
+            <div class="header">
+                <h2>
+                   Step 1 : Basic Information
+                </h2>
+            </div>
+            <div class="body">
+                <form #firstForm="ngForm" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email1">Employee Number Series</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="email1" class="form-control" 
+                                        placeholder="Enter your email address" name="email1"
+                                        [(ngModel)]= "employeeData.email1" required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="empNo">Employee No</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="empNo" class="form-control"
+                                        placeholder="Enter your password" name="empNo" 
+                                         [(ngModel)]= "employeeData.pass1" required >
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg waves-effect" [disabled]= "!firstForm.form.valid" (click)="onNext1()" >
+                        NEXT
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Second Form -->
+        <div class="card" *ngIf= "second" >
+            <div class="header">
+                <h2>
+                    Second Information
+                </h2>
+            </div>
+            <div class="body">
+                <form #secondForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email2">Email Address</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="email2" class="form-control" 
+                                        placeholder="Enter your email address" name="email2"
+                                        [(ngModel)]= "employeeData.email2" required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass2">Password</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="pass2" class="form-control" 
+                                        placeholder="Enter your password" name="pass2" 
+                                        [(ngModel)]= "employeeData.pass2" required >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious1()" >
+                        PREVIOUS
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!secondForm.form.valid" (click)= "onNext2()" >
+                        NEXT
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Third Form -->
+        <div class="card" *ngIf= "third" >
+            <div class="header">
+                <h2>
+                    Third Information
+                </h2>
+            </div>
+            <div class="body">
+                <form #thirdForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email3">Email Address</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="email3" class="form-control" 
+                                        placeholder="Enter your email address" name="email3"
+                                        [(ngModel)]= "employeeData.email3" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass3">Password</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="pass3" class="form-control" 
+                                        placeholder="Enter your password" name="pass3" 
+                                        [(ngModel)]= "employeeData.pass3" required >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious2()" >PREVIOUS</button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!thirdForm.form.valid" (click)= "onNext3()" >NEXT</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Fourth Form -->
+        <div class="card" *ngIf= "fourth" >
+            <div class="header">
+                <h2>
+                    Fourth Information
+                </h2>
+            </div>
+            <div class="body">
+                <form #fourthForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email4">Email Address</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="email4" class="form-control" 
+                                        placeholder="Enter your email address" name="email4"
+                                        [(ngModel)]= "employeeData.email4" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass4">Password</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="pass4" class="form-control" 
+                                        placeholder="Enter your password" name="pass4" 
+                                        [(ngModel)]= "employeeData.pass4" required >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious3()" >PREVIOUS</button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!fourthForm.form.valid" (click)= "onSubmit()" >SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

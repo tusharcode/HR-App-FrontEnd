@@ -1,0 +1,485 @@
+<div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+      <!-- <div class="liner"></div> -->
+
+      <!-- circular user icon -->
+        <li >
+            <a>
+                <span class="round-tabs one" [ngStyle]="{'background-color' : formNo == 1 ? '#63c328' : 'white', 'color' : formNo == 1 ? 'white' : '#63c328' }">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+            </a>
+        </li>
+
+      <!-- circular tasks icon -->
+        <li>
+            <a >
+                <span class="round-tabs two" [ngStyle]="{'background-color' : formNo == 2 ? '#febf43' : 'white', 'color' : formNo == 2 ? 'white' : '#febf43' }">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                </span> 
+            </a>
+        </li>
+
+        <!-- circular home icon -->
+        <li>
+            <a >    
+                <span class="round-tabs three" [ngStyle]="{'background-color' : formNo == 3 ? '#3e5e9a' : 'white', 'color' : formNo == 3 ? 'white' : '#3e5e9a' }">
+                    <i class="glyphicon glyphicon-home"></i>
+                </span>
+            </a>
+        </li>
+
+      <!-- circular ok icon -->
+        <li>
+            <a >
+                <span class="round-tabs four" [ngStyle]="{'background-color' : formNo == 4 ? '#f1675e' : 'white', 'color' : formNo == 4 ? 'white' : '#f1675e' }">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Form Wizard Starts -->
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!-- Fisrt Form -->
+        <div class="card" *ngIf= "first" >
+            <div class="header">
+                <h2>
+                   Step 1 : Basic Information
+                </h2>
+            </div>
+            <div class="body">
+                <form #firstForm="ngForm" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="empNumSeries">Employee Number Series</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="empNumSeries"
+                                        [(ngModel)]= "employeeData.empNumSeries" >
+
+                                        <option value="">-- Please select --</option>
+                                        <option value="permanent">Permanent Employee</option>
+                                        <option value="temporary">Temporary Employee</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="empNo">Employee No</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="empNo" class="form-control"
+                                        placeholder="Employee No" name="empNo" 
+                                        [(ngModel)]= "employeeData.empNo"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="empName">Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="empName" class="form-control"
+                                        placeholder="Employee No" name="empName" 
+                                        [(ngModel)]= "employeeData.empName"  >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="empName">Date Of Birth</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text"
+                                        placeholder="Date of Birth"
+                                        class="form-control" [(ngModel)]= "employeeData.dob"
+                                        bsDatepicker>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="empName">Gender</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input name="gender" type="radio" class="with-gap" id="male" />
+                                    <label for="male">Male</label> &nbsp;&nbsp;
+                                    <input name="gender" type="radio" class="with-gap" id="female" />
+                                    <label for="female">Female</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="reportingManger">Reporting Manager</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="reportingManger"
+                                        [(ngModel)]= "employeeData.reportingManger" >
+
+                                        <option value="">-- Please select --</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="status">Status</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="status"
+                                        [(ngModel)]= "employeeData.status" >
+
+                                        <option value="">--Please Select--</option>
+                                        <option value="confirmed">Confirmed</option>                                        
+                                        <option value="contract">Contract</option>                                        
+                                        <option value="probation">Probation</option>                                        
+                                        <option value="trainee">Trainee</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="doj">Date of Joining</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text"
+                                        placeholder="Date of Joining" name="joiningDate"
+                                        class="form-control" [(ngModel)]= "employeeData.doj"
+                                        bsDatepicker>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="probPeriod">Probation Period</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="probPeriod" class="form-control"
+                                        placeholder="Probation Period" name="probPeriod" 
+                                        [(ngModel)]= "employeeData.probPeriod"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="confirmDate">Confirmation Date</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text"
+                                        placeholder="Confirmation Date" name="confirmDate"
+                                        class="form-control" [(ngModel)]= "employeeData.confirmDate"
+                                        bsDatepicker>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email">Email</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="email" class="form-control"
+                                        placeholder="Email" name="email" 
+                                        [(ngModel)]= "employeeData.email"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="mobile">Mobile Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="mobile" class="form-control"
+                                        placeholder="Mobile Number" name="mobile" 
+                                        [(ngModel)]= "employeeData.mobile"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="emergencyContactName">Emergency Contact Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="emergencyContactName" class="form-control"
+                                        placeholder="Emergency Contact Name" name="emergencyContactName" 
+                                        [(ngModel)]= "employeeData.emergencyContactName" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="emergencyContactNumber">Emergency Contact Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="emergencyContactNumber" class="form-control"
+                                        placeholder="Emergency Contact Number" name="emergencyContactNumber" 
+                                        [(ngModel)]= "employeeData.emergencyContactNumber" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="emergencyContactNumber">Emergency Contact Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="emergencyContactNumber" class="form-control"
+                                        placeholder="Emergency Contact Number" name="emergencyContactNumber" 
+                                        [(ngModel)]= "employeeData.emergencyContactNumber" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="fatherName">Father's name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="fatherName" class="form-control"
+                                        placeholder="Father's name" name="fatherName" 
+                                        [(ngModel)]= "employeeData.fatherName" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="spouseName">Spouse Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="spouseName" class="form-control"
+                                        placeholder="Spouse Name" name="spouseName" 
+                                        [(ngModel)]= "employeeData.spouseName" >
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg waves-effect" [disabled]= "!firstForm.form.valid" (click)="onNext1()" >
+                        NEXT
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Second Form -->
+        <div class="card" *ngIf= "second" >
+            <div class="header">
+                <h2>
+                    Step 2 : Employee Position
+                </h2>
+            </div>
+            <div class="body">
+                <form #secondForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="designation">Designation</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="designation"
+                                        [(ngModel)]= "employeeData.designation" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="department">Department</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="department"
+                                        [(ngModel)]= "employeeData.department" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="grade">Grade</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="grade"
+                                        [(ngModel)]= "employeeData.grade" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="location">Location</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="location"
+                                        [(ngModel)]= "employeeData.location" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="attendanceScheme">Attendance Scheme</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="attendanceScheme"
+                                        [(ngModel)]= "employeeData.attendanceScheme" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious1()" >
+                        PREVIOUS
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!secondForm.form.valid" (click)= "onNext2()" >
+                        NEXT
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Third Form -->
+        <div class="card" *ngIf= "third" >
+            <div class="header">
+                <h2>
+                    Step 3 : PF, ESI & LWF
+                </h2>
+            </div>
+            <div class="body">
+                <form #thirdForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="panNumber">Pan Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="panNumber"
+                                        [(ngModel)]= "employeeData.panNumber" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious2()" >PREVIOUS</button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!thirdForm.form.valid" (click)= "onNext3()" >NEXT</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Fourth Form -->
+        <div class="card" *ngIf= "fourth" >
+            <div class="header">
+                <h2>
+                    Step 4 : Payment Mode
+                </h2>
+            </div>
+            <div class="body">
+                <form #fourthForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="paymentType">Payment Type</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="paymentType"
+                                        [(ngModel)]= "employeeData.paymentType" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="bankName">Bank Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="bankName"
+                                        [(ngModel)]= "employeeData.bankName" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="bankBranch">Bank Branch</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select 
+                                        class="form-control show-tick" name="bankBranch"
+                                        [(ngModel)]= "employeeData.bankBranch" >
+
+                                        <option value="">-- Please select --</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="accountNumber">Account Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="accountNumber" class="form-control"
+                                        placeholder="Account Number" name="accountNumber" 
+                                        [(ngModel)]= "employeeData.accountNumber"  >
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious3()" >PREVIOUS</button>
+                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!fourthForm.form.valid" (click)= "onSubmit()" >SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
