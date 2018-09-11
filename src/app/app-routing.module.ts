@@ -10,13 +10,16 @@ import { EmployeebankdetailsComponent } from './employee/employeebankdetails/emp
 import { EmployeedetailsComponent } from './employee/employeedetails/employeedetails.component';
 import { EmployeeresignComponent } from './employee/employeeresign/employeeresign.component';
 import { ExtendprobperiodComponent } from './employee/extendprobperiod/extendprobperiod.component';
+import { ShowemployeesComponent } from './employee/showemployees/showemployees.component';
+import { EditemployeeComponent } from './employee/editemployee/editemployee.component';
 
 const routes: Routes = [
   { path : '', redirectTo : '/home', pathMatch : 'full' },
   { path : 'home', component : HomeComponent },
 
   { path : 'employee/new', component : AddemployeeComponent},
-
+  { path : 'employee/show', component : ShowemployeesComponent},
+  { path : 'employee/edit/:employeeNo', component : EditemployeeComponent},
   { path : 'employee/confirm', component : ConfirmemployeeComponent },
   { path : 'employee/bank', component : EmployeebankdetailsComponent },
   { path : 'employee/employees', component : EmployeedetailsComponent },

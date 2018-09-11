@@ -1,0 +1,761 @@
+<section >
+
+    <div class="row clearfix">
+
+        <div class="col-md-6">
+
+            <div class="card" >
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-5">
+                            <a href="javascript:void(0);" class="thumbnail">
+                                <img src="http://placehold.it/500x500" class="img-responsive">
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-7">
+                            <label style="font-size: 18px">Name : {{ employee.Name }} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Personal Information
+                    </h2>
+
+                    <ul class="header-dropdown m-r--5" *ngIf= "personalInfoBlock" >
+                        <li class="dropdown">
+                            <button type="button" (click)= "editPersonal()" class="btn btn-default btn-circle waves-effect" >
+                                <i class="material-icons">create</i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" *ngIf= "personalInfoBlock" >
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <label >DOB :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{employee.DateOfBirth}} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Birthday :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;</label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Blood Group :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.BloodGroup }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Father's Name :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.FatherName }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Marital Status :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.MaritialStatus }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Marriage Date :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.MarriageDate }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Spouse Name :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.SpouseName }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Nationality :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ None }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Residential Status :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.ResidentialStatus }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Place Of Birth :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.PlaceOfBirth }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Country Of Origin :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.CountryOfOrigin }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Religion :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.Religion }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >International Employee :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ None }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Physically Challenged :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ None }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Is Director :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ None }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Personal Email :</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <label>&nbsp; {{ employee.PersonalEmail }} </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="body" *ngIf= "personalInfoForm" >
+                    <div class="row ">
+                        <form class="form-horizontal">
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="dob">DOB</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="dob" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="birthday">Birthday</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="birthday" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="bloodGroup">Blood Group</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="bloodGroup" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="father">Father's Name</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="father" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="maritalStatus">Marital Status</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="maritalStatus" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="marriageDate">Marriage Date</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="marriageDate" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="spouse">Spouse Name</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="spouse" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="nationality">Nationality</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="nationality" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="residential">Residential Status</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="residential" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="birtplace">Place Of Birth</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="birtplace" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="ccuntryOfOrigin">Country Of Origin</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="ccuntryOfOrigin" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="religion">Religion</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="religion" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="personalEmail">Personal Email</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="personalEmail" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">Save</button>
+                                    <button type="button" class="btn btn-default m-t-15 m-l-5 waves-effect" (click)= "cancelPersonal()" >Cancel</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Employee Identity
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <label >Permanent Account Number :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;</label>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-md-5 text-right">
+                            <label >Bank Account Number :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Education
+                    </h2>
+
+                    <ul class="header-dropdown m-r--5" *ngIf= "educationBlock" >
+                        <li class="dropdown">
+                            <button type="button" (click)= "addEducation()" class="btn btn-default waves-effect" >
+                                Add
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" *ngIf= "educationBlock" >
+                    <div class="row ">
+
+                        <div class="col-md-7">
+                            <label>&nbsp; 
+                                {{ employee.Education.qualification }},
+                                {{ employee.Education.institute }} 
+                            </label>
+                        </div>
+
+                        <div class="col-md-7">
+                            <label>&nbsp;
+                                {{ employee.Education.from }} &nbsp;To
+                                {{ employee.Education.to }}
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="body" *ngIf= "educationForm">
+                    <div class="row ">
+                        <form class="form-horizontal">
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="qualification">Qualification</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="qualification" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="from">From</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="from" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="to">To</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="to" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="institute">Institute</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="institute" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="remarks">Remarks</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="remarks" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">Save</button>
+                                    <button type="button" class="btn btn-default m-t-15 m-l-5 waves-effect" (click)= "cancelEducation()" >Cancel</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Current Position
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <label >Department :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Department }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Designation :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Designation }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Grade :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Grade }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Location :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Location }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Attendance Scheme :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Attendance }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Reporting To :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.ReportingManager }} </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Joining Details
+                    </h2>
+
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="btn btn-default btn-circle waves-effect" >
+                                <i class="material-icons">create</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <label >Joined On :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.DateOfJoining }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Confirmation Date :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.ConfirmationDate }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Status :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.Status }} </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Probation Period :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.ProbationPeriod }}</label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Notice Period :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp; {{ employee.ResignationDetails.NoticePeriod }} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Address
+                    </h2>
+                </div>
+
+                <div class="body">
+
+                </div>
+            </div>
+            
+            <div class="card" >
+                <div class="header">
+                    <h2>
+                        Background Check
+                    </h2>
+
+                    <ul class="header-dropdown m-r--5" *ngIf= "bgCheckBlock">
+                        <li class="dropdown">
+                            <button type="button" (click)= "editBackground()" class="btn btn-default btn-circle waves-effect" >
+                                <i class="material-icons">create</i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" *ngIf= "bgCheckBlock" >
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <label >Verification Status :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;
+                                {{ employee.BackgroundCheck.VerificationStatus }}
+                            </label>
+                        </div>
+                    
+                        <div class="col-md-5 text-right">
+                            <label >Verification Completed on :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;
+                                {{ employee.BackgroundCheck.VerificationCompletedon }}
+                            </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Agency Name :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;
+                                {{ employee.BackgroundCheck.AgencyName }}
+                            </label>
+                        </div>
+
+                        <div class="col-md-5 text-right">
+                            <label >Remarks :</label>
+                        </div>
+                        <div class="col-md-7">
+                            <label>&nbsp;                                    
+                                {{ employee.BackgroundCheck.remarks }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="body" *ngIf= "bgCheckForm">
+                    <div class="row ">
+                        <form class="form-horizontal">
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="verificationStatus">Verification Status</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="verificationStatus" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="verificationCompleted">Verification Completed on</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="verificationCompleted" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="agency">Agency Name</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="agency" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 form-control-label">
+                                    <label for="remarks">Remarks</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="remarks" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">Save</button>
+                                    <button type="button" class="btn btn-default m-t-15 m-l-5 waves-effect" (click)= "cancelBackground()" >Cancel</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="card" >
+
+                <div class="header">
+                    <h2>
+                        Remarks
+                    </h2>
+
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <button type="button" class="btn btn-default btn-circle waves-effect" >
+                                <i class="material-icons">create</i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>&nbsp;
+                                {{ employee.Remarks }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

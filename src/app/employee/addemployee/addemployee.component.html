@@ -59,7 +59,7 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="empNumSeries"
-                                        [(ngModel)]= "employeeData.empNumSeries" >
+                                        [(ngModel)]= "employeeData.EmployeeNumberSeries" >
 
                                         <option value="">-- Please select --</option>
                                         <option value="permanent">Permanent Employee</option>
@@ -76,7 +76,7 @@
                                     <input 
                                         type="text" id="empNo" class="form-control"
                                         placeholder="Employee No" name="empNo" 
-                                        [(ngModel)]= "employeeData.empNo"  >
+                                        [(ngModel)]= "employeeData.EmployeeNo"  >
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                     <input 
                                         type="text" id="empName" class="form-control"
                                         placeholder="Employee No" name="empName" 
-                                        [(ngModel)]= "employeeData.empName"  >
+                                        [(ngModel)]= "employeeData.Name"  >
                                 </div>
                             </div>
                         </div>
@@ -96,9 +96,8 @@
                             <label for="empName">Date Of Birth</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text"
-                                        placeholder="Date of Birth"
-                                        class="form-control" [(ngModel)]= "employeeData.dob"
+                                    <input type="text" placeholder="Date of Birth" name="birthDate"
+                                        class="form-control" [(ngModel)]= "employeeData.DateOfBirth"
                                         bsDatepicker>
                                 </div>
                             </div>
@@ -108,9 +107,11 @@
                             <label for="empName">Gender</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input name="gender" type="radio" class="with-gap" id="male" />
+                                    <input name="gender" type="radio" class="with-gap" value="male" 
+                                        id="male" [(ngModel)]= "employeeData.Gender" checked>
                                     <label for="male">Male</label> &nbsp;&nbsp;
-                                    <input name="gender" type="radio" class="with-gap" id="female" />
+                                    <input name="gender" type="radio" class="with-gap" value="female"
+                                        id="female" [(ngModel)]= "employeeData.Gender" >
                                     <label for="female">Female</label>
 
                                 </div>
@@ -123,9 +124,10 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="reportingManger"
-                                        [(ngModel)]= "employeeData.reportingManger" >
+                                        [(ngModel)]= "employeeData.ReportingManager" >
 
-                                        <option value="">-- Please select --</option>                                        
+                                        <option value="">-- Please select --</option>                                
+                                        <option value="Alex">Alex</option>                                
                                     </select>
                                 </div>
                             </div>
@@ -137,7 +139,7 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="status"
-                                        [(ngModel)]= "employeeData.status" >
+                                        [(ngModel)]= "employeeData.Status" >
 
                                         <option value="">--Please Select--</option>
                                         <option value="confirmed">Confirmed</option>                                        
@@ -155,7 +157,7 @@
                                 <div class="form-line">
                                     <input type="text"
                                         placeholder="Date of Joining" name="joiningDate"
-                                        class="form-control" [(ngModel)]= "employeeData.doj"
+                                        class="form-control" [(ngModel)]= "employeeData.DateOfJoining"
                                         bsDatepicker>
                                 </div>
                             </div>
@@ -168,7 +170,7 @@
                                     <input 
                                         type="text" id="probPeriod" class="form-control"
                                         placeholder="Probation Period" name="probPeriod" 
-                                        [(ngModel)]= "employeeData.probPeriod"  >
+                                        [(ngModel)]= "employeeData.ProbationPeriod"  >
                                 </div>
                             </div>
                         </div>
@@ -179,7 +181,7 @@
                                 <div class="form-line">
                                     <input type="text"
                                         placeholder="Confirmation Date" name="confirmDate"
-                                        class="form-control" [(ngModel)]= "employeeData.confirmDate"
+                                        class="form-control" [(ngModel)]= "employeeData.ConfirmationDate"
                                         bsDatepicker>
                                 </div>
                             </div>
@@ -192,7 +194,7 @@
                                     <input 
                                         type="text" id="email" class="form-control"
                                         placeholder="Email" name="email" 
-                                        [(ngModel)]= "employeeData.email"  >
+                                        [(ngModel)]= "employeeData.Email"  >
                                 </div>
                             </div>
                         </div>
@@ -204,7 +206,7 @@
                                     <input 
                                         type="text" id="mobile" class="form-control"
                                         placeholder="Mobile Number" name="mobile" 
-                                        [(ngModel)]= "employeeData.mobile"  >
+                                        [(ngModel)]= "employeeData.MobileNumber"  >
                                 </div>
                             </div>
                         </div>
@@ -216,7 +218,7 @@
                                     <input 
                                         type="text" id="emergencyContactName" class="form-control"
                                         placeholder="Emergency Contact Name" name="emergencyContactName" 
-                                        [(ngModel)]= "employeeData.emergencyContactName" >
+                                        [(ngModel)]= "employeeData.EmergencyContactName" >
                                 </div>
                             </div>
                         </div>
@@ -228,19 +230,7 @@
                                     <input 
                                         type="text" id="emergencyContactNumber" class="form-control"
                                         placeholder="Emergency Contact Number" name="emergencyContactNumber" 
-                                        [(ngModel)]= "employeeData.emergencyContactNumber" >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="emergencyContactNumber">Emergency Contact Number</label>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input 
-                                        type="text" id="emergencyContactNumber" class="form-control"
-                                        placeholder="Emergency Contact Number" name="emergencyContactNumber" 
-                                        [(ngModel)]= "employeeData.emergencyContactNumber" >
+                                        [(ngModel)]= "employeeData.EmergencyContactNumber" >
                                 </div>
                             </div>
                         </div>
@@ -252,7 +242,7 @@
                                     <input 
                                         type="text" id="fatherName" class="form-control"
                                         placeholder="Father's name" name="fatherName" 
-                                        [(ngModel)]= "employeeData.fatherName" >
+                                        [(ngModel)]= "employeeData.FatherName" >
                                 </div>
                             </div>
                         </div>
@@ -264,7 +254,7 @@
                                     <input 
                                         type="text" id="spouseName" class="form-control"
                                         placeholder="Spouse Name" name="spouseName" 
-                                        [(ngModel)]= "employeeData.spouseName" >
+                                        [(ngModel)]= "employeeData.SpouseName" >
                                 </div>
                             </div>
                         </div>
@@ -294,9 +284,26 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="designation"
-                                        [(ngModel)]= "employeeData.designation" >
+                                        [(ngModel)]= "employeeData.Designation" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="Accounts Executive">Accounts Executive</option>
+                                        <option value="Business Development Executive">Business Development Executive</option>
+                                        <option value="Business Development Manager">Business Development Manager</option>
+                                        <option value="CEO">CEO</option>
+                                        <option value="CFO">CFO</option>
+                                        <option value="Director">Director</option>
+                                        <option value="Finance Manager">Finance Manager</option>
+                                        <option value="HR Executive">HR Executive</option>
+                                        <option value="HR Manager">HR Manager</option>
+                                        <option value="Jr. HR Executive">Jr. HR Executive</option>
+                                        <option value="Jr. Software Engineer">Jr. Software Engineer</option>
+                                        <option value="Office Assistant">Office Assistant</option>
+                                        <option value="Project Manager">Project Manager</option>
+                                        <option value="Software Engineer">Software Engineer</option>
+                                        <option value="Sr. Software Engineer">Sr. Software Engineer</option>
+                                        <option value="Tele Caller">Tele Caller</option>
+                                        <option value="Trainee">Trainee</option>
 
                                     </select>
                                 </div>
@@ -309,9 +316,15 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="department"
-                                        [(ngModel)]= "employeeData.department" >
+                                        [(ngModel)]= "employeeData.Department" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="Development">Development</option>
+                                        <option value="Facilities">Facilities</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="HR">HR</option>
+                                        <option value="product">product</option>
+                                        <option value="Sales">Sales</option>
 
                                     </select>
                                 </div>
@@ -324,9 +337,14 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="grade"
-                                        [(ngModel)]= "employeeData.grade" >
+                                        [(ngModel)]= "employeeData.Grade" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="G1">G1</option>
+                                        <option value="G2">G2</option>
+                                        <option value="G3">G3</option>
+                                        <option value="G4">G4</option>
+                                        <option value="G5">G5</option>
 
                                     </select>
                                 </div>
@@ -339,9 +357,10 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="location"
-                                        [(ngModel)]= "employeeData.location" >
+                                        [(ngModel)]= "employeeData.Location" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="Hyderabad">Hyderabad</option>
 
                                     </select>
                                 </div>
@@ -354,9 +373,13 @@
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="attendanceScheme"
-                                        [(ngModel)]= "employeeData.attendanceScheme" >
+                                        [(ngModel)]= "employeeData.Attendance" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="Contract Employees">Contract Employees</option>
+                                        <option value="General scheme">General scheme</option>
+                                        <option value="Probation Scheme">Probation Scheme</option>
+                                        <option value="Trainee Scheme">Trainee Scheme</option>
 
                                     </select>
                                 </div>
@@ -388,16 +411,77 @@
                             <label for="panNumber">Pan Number</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <select 
-                                        class="form-control show-tick" name="panNumber"
-                                        [(ngModel)]= "employeeData.panNumber" >
-
-                                        <option value="">-- Please select --</option>
-
-                                    </select>
+                                    <input 
+                                        type="text" id="panNumber" class="form-control"
+                                        placeholder="Pan Number" name="panNumber" 
+                                        [(ngModel)]= "employeeData.PANnumber"  >
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input 
+                                type="checkbox" id="pf" class="filled-in chk-col-green" 
+                                (change)= "pfChecked()" >
+                            <label for="pf"> Include PF</label>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf= "pf" >
+                        <div class="col-md-6">
+                            <label for="pfNo">PF Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="pfNo" class="form-control"
+                                        placeholder="PF Number" name="pfNo" 
+                                        [(ngModel)]= "employeeData.PFNumber"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="uanNo">UAN Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="uanNo" class="form-control"
+                                        placeholder="UAN Number" name="uanNo" 
+                                        [(ngModel)]= "employeeData.UANnumber"  >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input 
+                                type="checkbox" id="esi" class="filled-in chk-col-green" 
+                                (change)= "esiChecked()" >
+                            <label for="esi"> Include ESI</label>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf= "esi" >
+                        <div class="col-md-6">
+                            <label for="esiNo">ESI Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="esiNo" class="form-control"
+                                        placeholder="ESI Number" name="esiNo" 
+                                        [(ngModel)]= "employeeData.ESInumber"  >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input 
+                                type="checkbox" id="lwf" class="filled-in chk-col-green" 
+                                name="lwf" [(ngModel)]= "employeeData.LWF" >
+                            <label for="lwf"> Include LWF</label>
+                        </div>
+
                     </div>
 
                     <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious2()" >PREVIOUS</button>
@@ -416,15 +500,30 @@
             <div class="body">
                 <form #fourthForm="ngForm">
                     <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="salary">Salary</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input
+                                        type="text" id="salary" class="form-control"
+                                        placeholder="Salary" name="salary" 
+                                        [(ngModel)]= "employeeData.Salary" >
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <label for="paymentType">Payment Type</label>
                             <div class="form-group">
                                 <div class="form-line">
                                     <select 
                                         class="form-control show-tick" name="paymentType"
-                                        [(ngModel)]= "employeeData.paymentType" >
+                                        [(ngModel)]= "employeeData.PaymentType" >
 
                                         <option value="">-- Please select --</option>
+                                        <option value="Check">Check</option>
+                                        <option value="Cash">Cash</option>
 
                                     </select>
                                 </div>
@@ -435,13 +534,10 @@
                             <label for="bankName">Bank Name</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <select 
-                                        class="form-control show-tick" name="bankName"
-                                        [(ngModel)]= "employeeData.bankName" >
-
-                                        <option value="">-- Please select --</option>
-
-                                    </select>
+                                    <input
+                                        type="text" id="bankName" class="form-control"
+                                        placeholder="Bank Name" name="bankName" 
+                                        [(ngModel)]= "employeeData.BankName" >
                                 </div>
                             </div>
                         </div>
@@ -450,13 +546,22 @@
                             <label for="bankBranch">Bank Branch</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <select 
-                                        class="form-control show-tick" name="bankBranch"
-                                        [(ngModel)]= "employeeData.bankBranch" >
+                                    <input
+                                        type="text" id="bankBranch" class="form-control"
+                                        placeholder="Bank Branch" name="bankBranch" 
+                                        [(ngModel)]= "employeeData.BankBranch" >
+                                </div>
+                            </div>
+                        </div>
 
-                                        <option value="">-- Please select --</option>
-
-                                    </select>
+                        <div class="col-md-6">
+                            <label for="ifscCode">IFSC Code</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input
+                                        type="text" id="ifscCode" class="form-control"
+                                        placeholder="IFSC Code" name="ifscCode" 
+                                        [(ngModel)]= "employeeData.IFSCode" >
                                 </div>
                             </div>
                         </div>
@@ -468,15 +573,36 @@
                                     <input 
                                         type="text" id="accountNumber" class="form-control"
                                         placeholder="Account Number" name="accountNumber" 
-                                        [(ngModel)]= "employeeData.accountNumber"  >
+                                        [(ngModel)]= "employeeData.BankAccountNo"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="nameAsBank">Name As per Bank Detail</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input 
+                                        type="text" id="nameAsBank" class="form-control"
+                                        placeholder="Name As per Bank Detail" name="nameAsBank" 
+                                        [(ngModel)]= "employeeData.NameAsPerBankRecords"  >
                                 </div>
                             </div>
                         </div>
 
                     </div>
 
-                    <button type="button" class="btn bg-cyan btn-lg waves-effect" (click)= "onPrevious3()" >PREVIOUS</button>
-                    <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" [disabled]= "!fourthForm.form.valid" (click)= "onSubmit()" >SUBMIT</button>
+                    <button 
+                        type="button" class="btn bg-cyan btn-lg waves-effect" 
+                        (click)= "onPrevious3()" >
+                        PREVIOUS
+                    </button>
+                    <button 
+                        type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" 
+                        [disabled]= "!fourthForm.form.valid" (click)= "registerEmployee()" >
+
+                        SUBMIT
+                    </button>
                 </form>
             </div>
         </div>
